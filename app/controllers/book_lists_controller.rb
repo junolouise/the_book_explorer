@@ -12,9 +12,9 @@ class BookListsController < ApplicationController
 
     if @book_list.save
       flash[:notice] = "Saved booklist"
-      render 'index'
+      render "index"
     else
-      render 'new'
+      render "new"
     end
   end
 
