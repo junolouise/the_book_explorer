@@ -7,6 +7,9 @@ class BookListsController < ApplicationController
     @book_list = BookList.new
   end
 
+  def create
+  end
+
   private
 
   def item_params
