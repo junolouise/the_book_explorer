@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = "You have signed up #{@user.email} to The Book Explorer"
       flash[:color]= "valid"
-      render "book_list/new"
+      redirect_to "/book_lists/new"
     else
       flash[:notice] = "Form is invalid"
       flash[:color]= "invalid"
