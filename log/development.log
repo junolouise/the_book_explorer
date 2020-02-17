@@ -1241,3 +1241,61 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 69ms (Views: 29.0ms | ActiveRecord: 28.7ms)
 
 
+Started GET "/" for ::1 at 2020-02-17 21:11:11 +0000
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 154ms (Views: 149.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2020-02-17 21:11:15 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 32ms (Views: 19.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/users" for ::1 at 2020-02-17 21:11:22 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LfT2GcFuRxP3wU/9y1mq/fJbKysn/o57muTftR9EzS44rlO2Y2ZqwpIiNkJnHBEy0Nvm2JJyiQi99o3m40gBvw==", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 244ms (Views: 11.5ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/users" for ::1 at 2020-02-17 21:11:30 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1XyXnCVfZ+KXPIOxdIxqj7YvFyf7aJzHKOYeNXCDAKH5YQlyHkJBVceedEpbUN8euiXwS8uVnRpJpfLjwqJ/nQ==", "user"=>{"email"=>"rrrrr@r.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Signup"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rrrrr@r.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["email", "rrrrr@r.com"], ["password_digest", "$2a$12$n6tv3bxb2XRcINCYdCnvRegWL1l5w6uGWb3AwXtB4qz5/wuxUQKlS"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/book_lists/new
+Completed 302 Found in 224ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/book_lists/new" for ::1 at 2020-02-17 21:11:31 +0000
+Processing by BookListsController#new as HTML
+  Rendering book_lists/new.html.erb within layouts/application
+  Rendered book_lists/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 26ms (Views: 15.5ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/book_lists" for ::1 at 2020-02-17 21:11:45 +0000
+Processing by BookListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tVaxGpYLiq2vTPhP6TohOqdgwWUB3daKuZcK8LWqcbyZSy/0rRasGv/uD7TG5pSrq2omCTEg11fY1OYmB4sOgA==", "book_list"=>{"csv"=>#<ActionDispatch::Http::UploadedFile:0x00007feaf2350d60 @tempfile=#<Tempfile:/var/folders/g_/gkkhw6nn5zg9ntxsldbhjnym0000gp/T/RackMultipart20200217-51200-25rvei.csv>, @original_filename="Untitled spreadsheet - Sheet1.csv", @content_type="text/csv", @headers="Content-Disposition: form-data; name=\"book_list[csv]\"; filename=\"Untitled spreadsheet - Sheet1.csv\"\r\nContent-Type: text/csv\r\n">, "csv_cache"=>""}, "commit"=>"Create Book list"}
+Unpermitted parameter: :csv_cache
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBookList Create (23.4ms)[0m  [1m[32mINSERT INTO "book_lists" ("created_at", "updated_at", "csv") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2020-02-17 21:11:45.156409"], ["updated_at", "2020-02-17 21:11:45.156409"], ["csv", "Untitled_spreadsheet_-_Sheet1.csv"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering book_lists/index.html.erb within layouts/application
+  Rendered book_lists/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 44ms (Views: 11.0ms | ActiveRecord: 24.4ms)
+
+
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "book_lists"[0m
+  [1m[36mBookList Load (0.2ms)[0m  [1m[34mSELECT  "book_lists".* FROM "book_lists" ORDER BY "book_lists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
