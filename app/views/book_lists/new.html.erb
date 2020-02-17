@@ -1,0 +1,9 @@
+<h1>Welcome to The Book Explorer</h1>
+
+<%= form_for @book_list, html: { multipart: true } do |f| %>
+  <p>
+    <label>My Csv</label>
+    <%= f.file_field :csv %>
+    <%= f.hidden_field :csv_cache %>
+  </p>
+<% end %>
