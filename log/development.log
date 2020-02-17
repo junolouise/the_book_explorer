@@ -1226,3 +1226,18 @@ Processing by BookListsController#index as HTML
 Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-02-17 20:44:55 +0000
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomepageController#index as HTML
+  Rendering homepage/index.html.erb within layouts/application
+  Rendered homepage/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 149ms (Views: 144.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2020-02-17 20:44:58 +0000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 69ms (Views: 29.0ms | ActiveRecord: 28.7ms)
+
+
