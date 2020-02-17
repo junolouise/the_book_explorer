@@ -11,9 +11,7 @@ class BookListsController < ApplicationController
   end
 
   private
-
-  def item_params
-    params.require(:book_list).permit(:csv)
-   end
-
+    def item_params
+      params.require(:book_list).permit(:csv)
+     end
 end

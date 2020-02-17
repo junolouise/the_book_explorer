@@ -10,8 +10,8 @@ end
 
 gem "bcrypt", "~> 3.1.7"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'carrierwave-aws', '~> 1.4'
-gem 'rails', '5.2.4.1'
+gem "carrierwave-aws", "~> 1.4"
+gem "rails", "5.2.4.1"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 0.18"
 # Use Puma as the app server
@@ -42,7 +42,7 @@ group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", "~> 2.13"
-  gem 'dotenv-rails'
+  gem "dotenv-rails"
   gem "selenium-webdriver"
 end
 
